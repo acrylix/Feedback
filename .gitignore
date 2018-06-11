@@ -61,4 +61,4 @@ typings/
 .next
 
 # project custom
-keys.js
+dev.js
