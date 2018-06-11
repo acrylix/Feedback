@@ -1,6 +1,6 @@
 # Feedback-API
 
 - express
-- passportJs + google strategy
+- passportJs + google strategy + cookie-session
 - nodemon
 - mongoDB + mongoose
