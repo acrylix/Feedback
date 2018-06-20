@@ -8,6 +8,8 @@ front-end
 
 - create-react-App
 - concurrently
+- react router
+- redux form
 
 services
 - passportJs + google strategy + cookie-session
