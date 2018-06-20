@@ -27,6 +27,7 @@ app.use(passport.session());
 // If no thing match below, return index.html
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
