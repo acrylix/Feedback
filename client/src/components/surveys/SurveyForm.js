@@ -3,19 +3,15 @@ import { reduxForm, Field } from 'redux-form';
 import SurveyField from './SurveyField';
 import { Link } from 'react-router-dom';
 import validateEmails from '../../utils/validateEmails';
+import formFields from './formFields';
 import _ from 'lodash';
 
-const FIELDS = [
-  { label: 'Survey Title', name: 'title' },
-  { label: 'Subject Line', name: 'subject' },
-  { label: 'Email Body', name: 'body' },
-  { label: 'Recipient List', name: 'emails' }
-];
+// ** after form component unmounts, state entries are dumped from mem
 
 // SurveyForm shows a form for a user to add input
 class SurveyForm extends Component {
   renderFields() {
-    return _.map(FIELDS, ({ label, name }) => {
+    return _.map(formFields, ({ label, name }) => {
       return (
         <Field
           key={name}
@@ -30,7 +26,8 @@ class SurveyForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+        {/* same as ...handleSubmit(()=>this.props.onSurveySubmit) */}
+        <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
           {this.renderFields()}
           <Link to="/surveys" className="red btn-flat white-text">
             Cancel
@@ -46,10 +43,9 @@ class SurveyForm extends Component {
 
 // values contains all values from form
 function validate(values) {
-  console.log(values);
   const errors = {};
 
-  _.each(FIELDS, ({ name }) => {
+  _.each(formFields, ({ name }) => {
     if (!values[name]) {
       errors[name] = 'You must provide a value';
     }
@@ -64,5 +60,6 @@ function validate(values) {
 // if validate error object has label -> pass as prop to custom field obj
 export default reduxForm({
   validate,
-  form: 'surveyForm'
+  form: 'surveyForm',
+  destroyOnUnmount: false //IMPORTANT for SurveyFormReview data
 })(SurveyForm);

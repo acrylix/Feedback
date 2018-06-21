@@ -1,14 +1,36 @@
 import React, { Component } from 'react';
 import SurveyForm from './SurveyForm';
+import SurveyFormReview from './SurveyFormReview';
 
 // SurveyNew shows SurveyForm and SurveyFormReview
 class SurveyNew extends Component {
-  render() {
+  // component level state ***
+  // constructor(props) {
+  //   super(props);
+  //
+  //   this.state = { new: true };
+  // }
+  // same as below
+
+  state = { showFormReview: false };
+
+  renderContent() {
+    if (this.state.showFormReview) {
+      return (
+        <SurveyFormReview
+          onCancel={() => this.setState({ showFormReview: false })}
+        />
+      );
+    }
     return (
-      <div>
-        <SurveyForm />
-      </div>
+      <SurveyForm
+        onSurveySubmit={() => this.setState({ showFormReview: true })}
+      />
     );
+  }
+
+  render() {
+    return <div>{this.renderContent()}</div>;
   }
 }
 
