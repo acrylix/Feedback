@@ -43,6 +43,23 @@ class SurveyForm extends Component {
   }
 }
 
+// values contains all values from form
+function validate(values) {
+  console.log(values);
+  const errors = {};
+
+  _.each(FIELDS, ({ name }) => {
+    if (!values[name]) {
+      errors[name] = 'You must provide a value';
+    }
+  });
+
+  return errors;
+}
+
+// redux form will connect the dots as such
+// if validate error object has label -> pass as prop to custom field obj
 export default reduxForm({
+  validate,
   form: 'surveyForm'
 })(SurveyForm);
