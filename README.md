@@ -9,7 +9,7 @@ front-end
 - create-react-App
 - concurrently
 - react router
-- redux form
+- redux form + materializeCSS
 
 services
 - passportJs + google strategy + cookie-session
