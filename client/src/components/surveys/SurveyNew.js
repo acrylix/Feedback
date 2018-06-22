@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SurveyForm from './SurveyForm';
+import { reduxForm } from 'redux-form';
 import SurveyFormReview from './SurveyFormReview';
 
 // SurveyNew shows SurveyForm and SurveyFormReview
@@ -34,4 +35,9 @@ class SurveyNew extends Component {
   }
 }
 
-export default SurveyNew;
+// this enables cancel button to clear out model
+// 'saves' surveyForm until unmount of SurveyNew componentDidMoun
+// parente of form and formReview
+export default reduxForm({
+  form: 'surveyForm'
+})(SurveyNew);
