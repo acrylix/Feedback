@@ -22,7 +22,8 @@ Soon bro, soon
 - mongoDB (mLab) + mongoose
 - PassportJs + Google OAuth strategy
 - StripeAPI
-- SendGridAPI
+- SendGridAPI + Webhooks via <del>localtunnel</del> ngrok\
+- lodash
 
 ## Features
 - Email Payment for Credits
