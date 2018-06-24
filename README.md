@@ -8,6 +8,8 @@ A little web-app that allows users to send simple email feedback forms to multip
 
 **[Demo](https://frozen-river-37156.herokuapp.com/)**
 
+(Demo is using stripe test mode: use test mode credentials)
+
 ## Screenshots
 ![alt text](https://github.com/acrylix/Feedback/blob/master/client/screenshots/screenshot.png?raw=true)
 
@@ -16,6 +18,7 @@ A little web-app that allows users to send simple email feedback forms to multip
 - React (Redux/Router/Form) via [CRA](https://github.com/facebook/create-react-app)
 - materializeCSS
 - axios
+- react-minimal-pie-chart
 
 <b>Back-end</b>
 - node 8.1.1
@@ -24,7 +27,7 @@ A little web-app that allows users to send simple email feedback forms to multip
 - mongoDB (mLab) + mongoose
 - PassportJs + Google OAuth strategy
 - StripeAPI
-- SendGridAPI + Webhooks via <del>localtunnel</del> ngrok\
+- SendGridAPI + Webhooks via <del>localtunnel</del> ngrok
 - lodash
 
 ## Features
@@ -42,10 +45,9 @@ First run
 To launch API and client
 ``npm run dev``
 
+For sendGrid webhook: setup ``ngrok``
+
 (client@localhost:3000 API@localhost:5000)
-
-## API Reference
-
 
 ## License
 
