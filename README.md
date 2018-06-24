@@ -4,7 +4,7 @@
 
 
 ## FeedbackManager
-A little web-app that allows users to send simple email feedback forms to multiple recipients and collecting results.
+A little web-app that allows users to send batch email survey campaigns via credit purchases, automatic feedback collection and analytics.
 
 **[Demo](https://frozen-river-37156.herokuapp.com/)**
 
