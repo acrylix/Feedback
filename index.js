@@ -10,6 +10,8 @@ require('./services/passport'); //just run config
 
 mongoose.connect(keys.mongoURI);
 
+//// copy above into node console to rapid fire test mongodb queires /////
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -45,4 +47,4 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
-console.log('serverstarted@',PORT);
+console.log('serverstarted@', PORT);

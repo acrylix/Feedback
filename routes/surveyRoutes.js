@@ -36,7 +36,8 @@ module.exports = app => {
           },
           {
             $inc: { [choice]: 1 },
-            $set: { 'recipients.$.responded': true }
+            $set: { 'recipients.$.responded': true },
+            lastResponded: new Date()
           }
         ).exec();
       })
@@ -46,7 +47,6 @@ module.exports = app => {
   });
 
   app.get('/api/surveys/:surveyId/:answer', (req, res) => {
-    // console.log(req.params);
     res.send('Thanks for voting!');
   });
 
