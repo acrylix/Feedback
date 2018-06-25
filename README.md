@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/acrylix/Feedback.svg?branch=master)](https://travis-ci.org/acrylix/Feedback)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-## FeedbackManager
+## FeedbackManager 
 A little web-app that allows users to send batch email survey campaigns via credit purchases, automatic feedback collection and analytics.
 
 **[Demo](https://frozen-river-37156.herokuapp.com/)**
